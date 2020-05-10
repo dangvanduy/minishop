@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+
+	
+	
+	<!-- tao bean voi property init method , destroy method
+	<bean name="nhanvien" class="com.dangvanduy.entity.NhanVien" init-method="start" destroy-method="destroy">
+		<property name="name" value="Dang Van Duy"></property>
+	</bean>
+	-->
+
+
+
+
+	<!--tao Bean voi factory bean va factory method
+	<bean name="nhanvien1" factory-bean="nhanvien" factory-method="createNhanvien">
+		
+	</bean>-->
+	
+	
+	
+
+	<!-- tao Bean voi phuong thuc khoi tao co tham so 
+	
+	<bean name="nhanvien" class="com.dangvanduy.entity.NhanVien">
+		<constructor-arg value="DANG VAN DUY"/>
+		<constructor-arg value="18"/>
+		<constructor-arg value="Thanh Hoa"/>
+	</bean>-->
+	
+	
+	
+	
+	<!-- giam doc -->
+	<bean name="giamdoc" class="com.dangvanduy.entity.GiamDoc" >
+		<constructor-arg value="Dang Van Duy"></constructor-arg>
+		<constructor-arg value="18"></constructor-arg>
+		<constructor-arg value="Thanh Hoa"></constructor-arg>
+		<constructor-arg value="Giam doc"></constructor-arg>
+	</bean>
+	<bean name="doc" class="com.dangvanduy.entity.GiamDoc" >
+		<constructor-arg value="Dang Van Duy1111"></constructor-arg>
+		<constructor-arg value="18"></constructor-arg>
+		<constructor-arg value="Thanh Hoa"></constructor-arg>
+		<constructor-arg value="Giam doc"></constructor-arg>
+	</bean>
+	<!-- tao bean co tham so la 1 bean khac dung ref, scope co singlepn va propetype -->
+	<bean name="nhanvien" class="com.dangvanduy.entity.NhanVien" scope="singleton" autowire="byName" >
+		<!-- <constructor-arg ref="giamdoc"></constructor-arg>  -->
+		
+		<!-- them vao 1 list cac du lieu nguyen thuy dung value
+		<property name="list">
+			<list>
+				<value>dang van duy</value>
+				<value>dang van duy 1</value>
+			</list>
+		</property>
+		 -->
+		
+		<!-- them 1 list doi tuong dung ref -->
+		<!-- <property name="list">
+			<list>
+				<ref bean="giamdoc"/>
+				<ref bean="giamdoc1"/>
+				
+			</list>
+		</property>-->
+		
+		<!-- them 1 thuoc tinh map -->
+		<!-- <property name="map">
+			<map> -->
+				
+				<!-- kieu du lieu nguyen thuy dung value -->
+				<!--<entry key="key1" value="ancut"></entry>-->
+				<!-- kieu du lieu object dung value - ref -->
+				<!--<entry key="key2" value-ref="nhanvien"></entry>
+			</map>
+		</property>-->
+		<!-- them 1 thuoc tinh properties
+		<property name="properties">
+			<props>
+				<prop key="jdbc">Mysql</prop>
+				<prop key="pass">Mysql</prop>
+			</props>
+		</property> -->
+		
+		
+		
+		<!-- hoc ve inner bean 
+		
+		<property name="doc">
+			<bean class="com.dangvanduy.entity.GiamDoc">
+				<property name="chucvu">
+					<value>Osin cao cap</value>
+				</property>
+			</bean>
+		</property>-->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</bean>
+	
+	<!-- tao 1 bean custemResource tu dong overwirt application context -->
+	<bean name="custemResource" class="com.dangvanduy.controller.CustomResource" autowire="byType"></bean>
+	
+</beans>
