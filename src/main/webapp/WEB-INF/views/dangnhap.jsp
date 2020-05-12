@@ -27,7 +27,40 @@
 			</div>
 			
 			<div id="container-login-right">
-					
+				<div id="header-top-right" class="header-login">
+					<span class="actived" id="dangnhap">Đăng nhập</span> / <span id="dangky">Đăng ký</span>
+				</div>
+				
+				<div id="container-center-login-right">
+						<div class="container-login-form" id="container-center-login-right">
+							<input id="email" name="email" class="material-textinput input-icon-email" placeholder="Email" type="text" /><br/>
+							<input id="matkhau" name="matkhau" class="material-textinput input-icon-password" placeholder="Mật khẩu " type="text" /><br/>
+							<input id="btnDangNhap" class="material-primary-button" type="submit" value="ĐĂNG NHẬP" / ><br/>
+							
+						</div>
+						
+						<div class="container-signup-form" id="container-center-login-right">
+							<form action="" method="post">
+								<input id="email" name="email" class="material-textinput input-icon-email" placeholder="Email" type="text" /><br/><p></p>
+								<input id="matkhau" name="matkhau" class="material-textinput input-icon-password" placeholder="Mật khẩu " type="password" /><br/><p></p>
+								<input id="nhaplaimatkhau" name="nhaplaimatkhau" class="material-textinput input-icon-password" placeholder="Nhập lại mật khẩu " type="password" /><br/>
+								<input id="btnDangNhap" class="material-primary-button" type="submit" value="ĐĂNG KÝ" /><br/>
+							</form>
+							
+						</div>
+						
+						
+						<span id="ketqua"></span>
+						<span>${kiemtradangnhap}</span>
+				</div>
+				
+				<div id="container-social-login">
+					<img alt="icon_oval" src='<c:url value="/resources/Image/icon_facebook.png" />' />
+					<img alt="icon_oval" src='<c:url value="/resources/Image/icon_google.png" />' />
+				</div>
+				
+		
+				
 			</div>
 			
 		</div>
